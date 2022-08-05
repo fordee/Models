@@ -7,6 +7,6 @@
 
 import SwiftBSON
 
-protocol MongoIdentifiable {
+public protocol MongoIdentifiable {
   var _id: BSONObjectID? { get set }
 }

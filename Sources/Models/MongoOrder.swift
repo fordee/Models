@@ -8,40 +8,40 @@
 import Foundation
 import SwiftBSON
 
-enum OrderStatus: String, Codable {
+public enum OrderStatus: String, Codable {
   case submitted
   case cancelled
   case delivered
 }
 
-struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
-  var _id: BSONObjectID?
-  let reservationId: String
-  let status: OrderStatus
-  let paid: Bool
-  let submittedTime: Date
-  var deliveredTime: Date? = nil
-  var items: [MongoOrderItems] = []
+public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
+  public var _id: BSONObjectID?
+  public let reservationId: String
+  public let status: OrderStatus
+  public let paid: Bool
+  public let submittedTime: Date
+  public var deliveredTime: Date? = nil
+  public var items: [MongoOrderItems] = []
 
-  var id: BSONObjectID? {
+  public var id: BSONObjectID? {
     _id
   }
 }
 
-struct MongoOrderItems: Codable {
-  let product: MongoProduct
-  let quantity: Int
-  let price: Double
+public struct MongoOrderItems: Codable {
+  public let product: MongoProduct
+  public let quantity: Int
+  public let price: Double
 }
 
-struct CreateMongoOrder: Codable {
-  let reservationId: String
-  let status: OrderStatus
-  let paid: Bool
+public struct CreateMongoOrder: Codable {
+  public let reservationId: String
+  public let status: OrderStatus
+  public let paid: Bool
 }
 
 /// The structure of a status update request.
-struct StatusUpdate: Codable {
-  let status: OrderStatus
+public struct StatusUpdate: Codable {
+  public let status: OrderStatus
 }
 

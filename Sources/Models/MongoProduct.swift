@@ -8,17 +8,17 @@
 import Foundation
 import SwiftBSON
 
-struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
-  var _id: BSONObjectID?
-  var name: String
-  var description: String
-  var imagePath: String
-  var stock: Int
-  var averagePurchasePrice: Double
-  var sellingPrice: Double
-  var bestByDate: Date
+public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
+  public var _id: BSONObjectID?
+  public var name: String
+  public var description: String
+  public var imagePath: String
+  public var stock: Int
+  public var averagePurchasePrice: Double
+  public var sellingPrice: Double
+  public var bestByDate: Date
 
-  var id: BSONObjectID? {
+  public var id: BSONObjectID? {
     _id
   }
 }
