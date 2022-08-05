@@ -23,6 +23,16 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   public var deliveredTime: Date? = nil
   public var items: [MongoOrderItems] = []
 
+  public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItems]) {
+    self._id = _id
+    self.reservationId = reservationId
+    self.status = status
+    self.paid = paid
+    self.submittedTime = submittedTime
+    self.deliveredTime = deliveredTime
+    self.items = items
+  }
+
   public var id: BSONObjectID? {
     _id
   }

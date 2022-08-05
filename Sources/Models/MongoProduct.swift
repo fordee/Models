@@ -18,6 +18,17 @@ public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
   public var sellingPrice: Double
   public var bestByDate: Date
 
+  public init(_id: BSONObjectID? = nil, name: String, description: String, imagePath: String, stock: Int, averagePurchasePrice: Double, sellingPrice: Double, bestByDate: Date) {
+    self._id = _id
+    self.name = name
+    self.description = description
+    self.imagePath = imagePath
+    self.stock = stock
+    self.averagePurchasePrice = averagePurchasePrice
+    self.sellingPrice = sellingPrice
+    self.bestByDate = bestByDate
+  }
+
   public var id: BSONObjectID? {
     _id
   }
