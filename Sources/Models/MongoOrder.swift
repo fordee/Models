@@ -9,6 +9,7 @@ import Foundation
 import SwiftBSON
 
 public enum OrderStatus: String, Codable {
+  case open
   case submitted
   case cancelled
   case delivered
@@ -23,7 +24,7 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   public var deliveredTime: Date? = nil
   public var items: [MongoOrderItems] = []
 
-  public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItems]) {
+  public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItems] = []) {
     self._id = _id
     self.reservationId = reservationId
     self.status = status
