@@ -22,9 +22,9 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   public let paid: Bool
   public let submittedTime: Date
   public var deliveredTime: Date? = nil
-  public var items: [MongoOrderItems] = []
+  public var items: [MongoOrderItem] = []
 
-  public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItems] = []) {
+  public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItem] = []) {
     self._id = _id
     self.reservationId = reservationId
     self.status = status
@@ -39,10 +39,16 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   }
 }
 
-public struct MongoOrderItems: Codable {
+public struct MongoOrderItem: Codable {
   public let product: MongoProduct
   public let quantity: Int
   public let price: Double
+
+  public init(product: MongoProduct, quantity: Int, price: Double) {
+    self.product = product
+    self.quantity = quantity
+    self.price = price
+  }
 }
 
 public struct CreateMongoOrder: Codable {
