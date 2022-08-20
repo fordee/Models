@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DatePointType {
+public enum DatePointType {
   case start
   case middle
   case end
@@ -15,13 +15,13 @@ enum DatePointType {
   case none
 }
 
-struct DatePoint: Hashable {
-  let date: DateComponents
-  let datePointType: DatePointType
-  let reservationId: String
-  let iCalDescription: String
+public struct DatePoint: Hashable {
+  public let date: DateComponents
+  public let datePointType: DatePointType
+  public let reservationId: String
+  public let iCalDescription: String
 
-  init(date: DateComponents, datePointType: DatePointType, reservationId: String, iCalDescription: String) {
+  public init(date: DateComponents, datePointType: DatePointType, reservationId: String, iCalDescription: String) {
     self.date = date
     self.datePointType = datePointType
     self.reservationId = reservationId
