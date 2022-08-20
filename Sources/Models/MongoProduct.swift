@@ -12,7 +12,7 @@ public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
   public var _id: BSONObjectID?
   public let name: String
   public let description: String
-  public let imagePath: String
+  public var imagePath: String
   public let stock: Int
   public let averagePurchasePrice: Double
   public let sellingPrice: Double
