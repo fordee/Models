@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MongoProduct.swift
 //  
 //
 //  Created by John Forde on 6/08/22.
@@ -10,13 +10,13 @@ import SwiftBSON
 
 public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
   public var _id: BSONObjectID?
-  public var name: String
-  public var description: String
-  public var imagePath: String
-  public var stock: Int
-  public var averagePurchasePrice: Double
-  public var sellingPrice: Double
-  public var bestByDate: Date
+  public let name: String
+  public let description: String
+  public let imagePath: String
+  public let stock: Int
+  public let averagePurchasePrice: Double
+  public let sellingPrice: Double
+  public let bestByDate: Date
 
   public init(_id: BSONObjectID? = nil, name: String, description: String, imagePath: String, stock: Int, averagePurchasePrice: Double, sellingPrice: Double, bestByDate: Date) {
     self._id = _id
