@@ -13,8 +13,8 @@ public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
   public let name: String
   public let description: String
   public var imagePath: String
-  public let stock: Int
-  public let averagePurchasePrice: Double
+  public var stock: Int
+  public var averagePurchasePrice: Double
   public let sellingPrice: Double
   public let bestByDate: Date
 
