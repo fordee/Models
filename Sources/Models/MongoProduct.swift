@@ -14,17 +14,17 @@ public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
   public let description: String
   public var imagePath: String
   public let stock: Int
-  public let averagePurchasePrice: Double
+//  public let averagePurchasePrice: Double
   public let sellingPrice: Double
   public let bestByDate: Date
 
-  public init(_id: BSONObjectID? = nil, name: String, description: String, imagePath: String, stock: Int, averagePurchasePrice: Double, sellingPrice: Double, bestByDate: Date) {
+  public init(_id: BSONObjectID? = nil, name: String, description: String, imagePath: String, stock: Int, /*averagePurchasePrice: Double,*/ sellingPrice: Double, bestByDate: Date) {
     self._id = _id
     self.name = name
     self.description = description
     self.imagePath = imagePath
     self.stock = stock
-    self.averagePurchasePrice = averagePurchasePrice
+//    self.averagePurchasePrice = averagePurchasePrice
     self.sellingPrice = sellingPrice
     self.bestByDate = bestByDate
   }
