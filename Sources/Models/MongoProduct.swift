@@ -8,7 +8,7 @@
 import Foundation
 import SwiftBSON
 
-public struct MongoProduct: Identifiable, Codable, MongoIdentifiable {
+public struct MongoProduct: Identifiable, Codable, Hashable, MongoIdentifiable {
   public var _id: BSONObjectID?
   public let name: String
   public let description: String
