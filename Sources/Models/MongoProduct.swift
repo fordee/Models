@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftBSON
+import SwiftUI
 
 public struct MongoProduct: Identifiable, Codable, Hashable, MongoIdentifiable {
   public var _id: BSONObjectID?

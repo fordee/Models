@@ -29,7 +29,7 @@ public struct Reservation: Identifiable, Codable, MongoIdentifiable {
   public let listingDescription: String
   public let earnings: Double
 
-  init(_id: BSONObjectID? = nil, reservationId: String, status: String, gestName: String, contact: String, adultsCount: Int, childrenCount: Int, infantCount: Int, startDate: Date, endDate: Date, dayCount: Int, bookingDate: Date, listingDescription: String, earnings: Double) {
+  public init(_id: BSONObjectID? = nil, reservationId: String, status: String, gestName: String, contact: String, adultsCount: Int, childrenCount: Int, infantCount: Int, startDate: Date, endDate: Date, dayCount: Int, bookingDate: Date, listingDescription: String, earnings: Double) {
     self._id = _id
     self.reservationId = reservationId
     self.status = status
