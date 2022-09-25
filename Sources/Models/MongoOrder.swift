@@ -62,3 +62,7 @@ public struct StatusUpdate: Codable {
   public let status: OrderStatus
 }
 
+public struct StatusItemsUpdate: Codable {
+  public let status: OrderStatus
+  public let items: [MongoOrderItem]
+}
