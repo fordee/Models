@@ -14,7 +14,7 @@ public enum OrderStatus: String, Codable {
   case cancelled
   case delivered
 
-  init?(rawValue: String) {
+  public init?(rawValue: String) {
     switch rawValue {
     case "open":
       self = .open
