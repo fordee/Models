@@ -13,6 +13,21 @@ public enum OrderStatus: String, Codable {
   case submitted
   case cancelled
   case delivered
+
+  init?(rawValue: String) {
+    switch rawValue {
+    case "open":
+      self = .open
+    case "submitted":
+      self = .submitted
+    case "cancelled":
+      self = .cancelled
+    case "delivered":
+      self = .delivered
+    default:
+      self = .open
+    }
+  }
 }
 
 public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
