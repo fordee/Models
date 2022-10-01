@@ -64,5 +64,10 @@ public struct StatusUpdate: Codable {
 
 public struct StatusItemsUpdate: Codable {
   public let status: OrderStatus
-  public let items: [MongoOrderItem]
+  public let items: [Int]
+
+  public init(status: OrderStatus, items: [Int]) {
+    self.status = status
+    self.items = items
+  }
 }
