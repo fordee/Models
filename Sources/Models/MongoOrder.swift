@@ -8,26 +8,26 @@
 import Foundation
 import SwiftBSON
 
-public enum OrderStatus: String, Codable {
+public enum OrderStatus: String, Codable, CaseIterable, RawRepresentable {
   case open
   case submitted
   case cancelled
   case delivered
 
-  public init?(rawValue: String) {
-    switch rawValue {
-    case "open":
-      self = .open
-    case "submitted":
-      self = .submitted
-    case "cancelled":
-      self = .cancelled
-    case "delivered":
-      self = .delivered
-    default:
-      self = .open
-    }
-  }
+//  public init?(rawValue: String) {
+//    switch rawValue {
+//    case "open":
+//      self = .open
+//    case "submitted":
+//      self = .submitted
+//    case "cancelled":
+//      self = .cancelled
+//    case "delivered":
+//      self = .delivered
+//    default:
+//      self = .open
+//    }
+//  }
 }
 
 public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
