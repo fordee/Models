@@ -15,6 +15,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/mongodb/swift-bson", .upToNextMajor(from: "3.1.0"))
+    //.package(url: "https://github.com/mongodb/mongo-swift-driver", .upToNextMajor(from: "1.3.0"))
   ],
   targets: [
     .target(

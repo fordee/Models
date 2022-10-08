@@ -54,6 +54,18 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   }
 }
 
+extension MongoOrder: Equatable {
+  public static func == (lhs: MongoOrder, rhs: MongoOrder) -> Bool {
+    lhs.id == rhs.id
+  }
+}
+
+extension MongoOrder: Hashable {
+  public func hash(into hasher: inout Hasher) {
+      hasher.combine(id)
+  }
+}
+
 public struct MongoOrderItem: Codable {
   public let product: MongoProduct
   public let quantity: Int
