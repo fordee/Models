@@ -30,6 +30,12 @@ public enum OrderStatus: String, Codable, CaseIterable, RawRepresentable {
 //  }
 }
 
+public enum PaymentMethod: String, Codable, CaseIterable, RawRepresentable {
+  case internetBanking
+  case cash
+  case viaAirBnB
+}
+
 public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   public var _id: BSONObjectID?
   public let reservationId: String
@@ -37,6 +43,7 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   public let paid: Bool
   public let submittedTime: Date
   public var deliveredTime: Date? = nil
+  public var paymentMethod: PaymentMethod? = nil
   public var items: [MongoOrderItem] = []
 
   public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItem] = []) {
