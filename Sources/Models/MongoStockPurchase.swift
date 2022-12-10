@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import SwiftBSON
+//import SwiftBSON
+import MongoSwift
 
 public struct MongoStockPurchase: Identifiable, Codable, MongoIdentifiable {
   public var _id: BSONObjectID?

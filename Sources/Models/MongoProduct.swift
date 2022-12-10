@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import SwiftBSON
+//import SwiftBSON
+import MongoSwift
 import SwiftUI
 
 public struct MongoProduct: Identifiable, Codable, Hashable, MongoIdentifiable {
