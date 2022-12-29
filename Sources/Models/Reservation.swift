@@ -9,7 +9,7 @@ import Foundation
 import SwiftBSON
 //import MongoSwift
 
-public struct Reservation: Identifiable, Codable, MongoIdentifiable {
+public struct Reservation: Identifiable, Codable, MongoIdentifiable, Equatable, Hashable {
   public var id: String {
     reservationId
   }
