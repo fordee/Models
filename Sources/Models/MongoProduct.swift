@@ -20,7 +20,7 @@ public struct MongoProduct: Codable, Hashable, MongoIdentifiable {
 //  public let averagePurchasePrice: Double
   public let sellingPrice: Double
   public let bestByDate: Date
-  public var categories: [String]
+  public var categories: [String] = []
 
   public init(_id: BSONObjectID? = nil, name: String, description: String, imagePath: String, stock: Int, /*averagePurchasePrice: Double,*/ sellingPrice: Double, bestByDate: Date, categories: [String] = []) {
     self._id = _id
