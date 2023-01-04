@@ -31,6 +31,14 @@ public enum OrderStatus: String, Codable, CaseIterable, RawRepresentable {
 //  }
 }
 
+public enum requestedDeliveryTime {
+  case asap
+  case morning
+  case afternoon
+  case evening
+  case tomorrow
+}
+
 public enum PaymentMethod: String, Codable, CaseIterable, RawRepresentable {
   case internetBanking
   case cash
