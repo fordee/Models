@@ -53,15 +53,26 @@ public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
   public let submittedTime: Date
   public var deliveredTime: Date? = nil
   public var paymentMethod: PaymentMethod? = nil
+  public var notes: String = ""
   public var items: [MongoOrderItem] = []
 
-  public init(_id: BSONObjectID? = nil, reservationId: String, status: OrderStatus, paid: Bool, submittedTime: Date, deliveredTime: Date? = nil, items: [MongoOrderItem] = []) {
+  public init(_id: BSONObjectID? = nil,
+              reservationId: String,
+              status: OrderStatus,
+              paid: Bool,
+              submittedTime: Date,
+              deliveredTime: Date? = nil,
+              paymentMethod: PaymentMethod? = nil,
+              notes: String = "",
+              items: [MongoOrderItem] = []) {
     self._id = _id
     self.reservationId = reservationId
     self.status = status
     self.paid = paid
     self.submittedTime = submittedTime
     self.deliveredTime = deliveredTime
+    self.paymentMethod = paymentMethod
+    self.notes = notes
     self.items = items
   }
 
