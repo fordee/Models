@@ -40,9 +40,9 @@ public enum requestedDeliveryTime {
 }
 
 public enum PaymentMethod: String, Codable, CaseIterable, RawRepresentable {
-  case internetBanking
-  case cash
-  case viaAirBnB
+  case internetBanking = "Internet Banking"
+  case cash = "Cash"
+  case viaAirBnB = "Pay via AirBnB"
 }
 
 public struct MongoOrder: Identifiable, Codable, MongoIdentifiable {
